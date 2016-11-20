@@ -1,0 +1,10 @@
+applications:
+- path: JavaCloudantApp.war
+  memory: 512M
+  instances: 1
+  domain: mybluemix.net
+  name: cookie-domain-test1
+  host: cookie-domain-test1
+  disk_quota: 1024M
+  services:
+  - cookie-domain-test1-cloudantNoSQLDB
