@@ -2,9 +2,17 @@
 <html>
 <head>
 	<title>Test Cookie Domain</title>
+	<script type="text/javascript">
+	function setCookie() {
+		document.cookie="test1";
+	}
+	function getCookie() {
+		alert(document.cookie);
+	}
+	</script>
 </head>
 <body>
-	<input type="button" value="set" onclick="alert('set')">set</input>
-	<input type="button" value="get" onclick="alert('get')">get</input>
+	<input type="button" value="set" onclick="setCookie();alert('set')">set</input>
+	<input type="button" value="get" onclick="alert('get');getCookie()">get</input>
 </body>
 </html>
