@@ -3,8 +3,8 @@
 <head>
 	<title>Test Cookie Domain</title>
 	<script type="text/javascript">
-	function setCookie() {
-		document.cookie="testid=test1;path='/';domain='cookie-domain-test1.mybluemix.net'";
+	function setCookie(strCookie) {
+		document.cookie="testid=test1;path='/';domain='" + strCookie + "'";
 	}
 	function getCookie() {
 		alert(document.cookie);
@@ -12,7 +12,12 @@
 	</script>
 </head>
 <body>
-	<input type="button" value="set" onclick="setCookie();alert('set')">set</input>
+	<input type="button" value="set" onclick="setCookie();alert('cookie-domain-test1.mybluemix.net/')">set_cookie-domain-test1.mybluemix.net/</input><br>
+	<input type="button" value="set" onclick="setCookie();alert('.mybluemix.net/')">set_.mybluemix.net/</input><br>
+	<input type="button" value="set" onclick="setCookie();alert('mybluemix.net/')">set_mybluemix.net/</input><br>
+	<input type="button" value="set" onclick="setCookie();alert('.net/')">set_.net/</input><br>
+	<input type="button" value="set" onclick="setCookie();alert('net/')">set_net/</input><br>
+	<input type="button" value="set" onclick="setCookie();alert('cookie-domain-test2.mybluemix.net/')">set_cookie-domain-test2.mybluemix.net/</input><br>
 	<input type="button" value="get" onclick="alert('get');getCookie()">get</input>
 </body>
 </html>
