@@ -8,11 +8,8 @@
 		var yy = now.getFullYear();
 		yy ++;
 		now.setFullYear(yy);
-		var extime = now.toUTCString();
-		alert("UTC is '" + extime + "'");
-		var gmtime = now.toGMTString();
-		alert("GMT is '" + gmtime + "'");		
-		var strCookieTo = "testid=test1;expires=" + extime + ";path=/;domain=" + strCookie;
+		var extime = now.toUTCString();		
+		var strCookieTo = "testid=" + strCookie + ";expires=" + extime + ";path=/;domain=" + strCookie;
 		document.cookie = strCookieTo;
 		alert("Cookie is set to '" + strCookieTo + "'");
 	}
@@ -31,5 +28,7 @@
 	<input type="button" value="set" onclick="setCookie('net')">set_net</input><br>
 	<input type="button" value="set" onclick="setCookie('cookie-domain-test2.mybluemix.net')">set_cookie-domain-test2.mybluemix.net</input><br>
 	<input type="button" value="get" onclick="getCookie()">get</input>
+	<input type="button" value="get" onclick="var now1 =new Date();alert(now1.toUTCString);">test toUTCString</input>
+	<input type="button" value="get" onclick="var now2 =new Date();alert(now2.toGMTString);">test toGMTString</input>
 </body>
 </html>
