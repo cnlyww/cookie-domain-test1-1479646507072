@@ -4,7 +4,15 @@
 	<title>Test Cookie Domain</title>
 	<script type="text/javascript">
 	function setCookie(strCookie) {
-		var strCookieTo = "testid=test1;path='/';domain='" + strCookie + "'";
+		var now = new Date();
+		var yy = now.getFullYear();
+		yy ++;
+		now.setFullYear(yy);
+		var extime = now.toUTCString();
+		alert("UTC is '" + extime + "'");
+		var gmtime = now.toGMTString();
+		alert("GMT is '" + gmtime + "'");		
+		var strCookieTo = "testid=test1;expires=" + extime + ";path=/;domain=" + strCookie;
 		document.cookie = strCookieTo;
 		alert("Cookie is set to '" + strCookieTo + "'");
 	}
